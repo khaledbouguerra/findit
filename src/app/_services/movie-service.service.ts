@@ -18,4 +18,21 @@ export class MovieServiceService {
         return res.json();
       })
   }
+
+  getMovie(id: string) {
+    var search = new URLSearchParams();
+    search.set('api_key', this.apikey);
+    return this._jsonp.get('https://api.themoviedb.org/3/movie/'+ id +'?callback=JSONP_CALLBACK', {search})
+      .map(res => {
+        return res.json();
+      })
+  }
+  getMovieVideos(id: string) {
+    var search = new URLSearchParams();
+    search.set('api_key', this.apikey);
+    return this._jsonp.get('https://api.themoviedb.org/3/movie/'+ id +'/videos?callback=JSONP_CALLBACK', {search})
+      .map(res => {
+        return res.json();
+      })
+  }
 }

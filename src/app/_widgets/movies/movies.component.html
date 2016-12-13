@@ -18,7 +18,7 @@
 <div *ngIf="true">
   <h3 class="orange-text">Search Results</h3>
   <div class="row is-flex">
-    <div class="col-sm-6 col-md-6 col-lg-3 col-xs-6" *ngFor="let movie of movies" >
+    <div class="col-md-offset-1" *ngFor="let movie of movies" >
       <app-card [movie]="movie"></app-card>
     </div>
   </div>

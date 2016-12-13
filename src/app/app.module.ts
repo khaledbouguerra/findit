@@ -9,12 +9,14 @@ import {RouterModule} from "@angular/router";
 import {routes, FinditRoutingModule} from "./app-routing.module";
 import { MoviesComponent } from './_widgets/movies/movies.component';
 import {MovieServiceService} from "./_services/movie-service.service";
+import { MovieComponent } from './movie/movie.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
-    MoviesComponent
+    MoviesComponent,
+    MovieComponent
   ],
   imports: [
     BrowserModule,
