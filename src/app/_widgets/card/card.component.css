@@ -7,7 +7,7 @@
   background-color:#007FBD;
   border:2px solid #0077B2;
   text-align:center;
-  cursor:pointer;
+
   font-size: 25px;
   padding: 15px;
   border-radius: 0px !important;
@@ -83,9 +83,9 @@
 }
 
 .picture_mob{
-  position: absolute;
+
   width: 35%;
-  left: 35%;
+  margin-left: 35%;
   bottom: 70%;
 }
 

@@ -1,14 +1,15 @@
 <p class="pull-right visible-xs">
-  <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
 </p>
 <div class="jumbotron">
   <p>Search</p>
   <form>
     <div class="form-group">
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search for movies..." [(ngModel)]="searchStr" name="searchStr" (keyup.enter)="searchMovies()">
+        <input type="text" class="form-control " placeholder="Search for movies..." (ngModelChange)="autocompleteResult(searchStr)" [(ngModel)]="searchStr" name="searchStr" (keyup.enter)="searchMovies()">
         <span class="input-group-btn">
-          <button class="btn btn-primary" type="button" (click)="searchMovies()">Go!</button>
+          <button class="btn btn-primary" type="button" (click)="searchMovies()" *ngIf="!searching" >Go!</button>
+          <img src="../../../public/images/searching.gif"*ngIf="searching">
+
         </span>
       </div>
       <!-- /input-group -->

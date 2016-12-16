@@ -9,16 +9,20 @@
     </div>
     <div class="col-md-8  col-xs-12">
       <img  src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}" *ngIf="movie.poster_path" class="img-thumbnail picture hidden-xs" />
-      <img src="http://136.243.1.253/~creolitic/bootsnipp/home.jpg" class="img-thumbnail" *ngIf="!movie.poster_path">
-      <img src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}" class="img-thumbnail visible-xs picture_mob" />
+      <img src="http://136.243.1.253/~creolitic/bootsnipp/home.jpg" class="img-thumbnail picture hidden-xs" *ngIf="!movie.poster_path">
+      <a routerLink="/movie/{{movie.id}}" >
+      <img src="http://136.243.1.253/~creolitic/bootsnipp/home.jpg" class="img-thumbnail picture_mob visible-xs" *ngIf="!movie.poster_path">
+      <img src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}" *ngIf="movie.poster_path" class="img-thumbnail visible-xs picture_mob" />
+      </a>
+
       <div class="header">
         <h1>{{movie.title}}</h1>
         <h1>
 
         </h1>
-        <span>
+        <div >
            {{movie.overview}}
-        </span>
+        </div>
       </div>
     </div>
   </div>
