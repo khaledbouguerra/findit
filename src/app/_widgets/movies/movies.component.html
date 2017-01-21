@@ -4,19 +4,47 @@
   <p>Search</p>
   <form>
     <div class="form-group">
+      <div class="container">
       <div class="input-group">
-        <input type="text" class="form-control " placeholder="Search for movies..." (ngModelChange)="autocompleteResult(searchStr)" [(ngModel)]="searchStr" name="searchStr" (keyup.enter)="searchMovies()">
+        <input type="text" class="form-control " placeholder="Search for movies..."  [(ngModel)]="searchStr" name="searchStr" (keyup.enter)="searchMovies()" (keyup)=filter()>
         <span class="input-group-btn">
           <button class="btn btn-primary" type="button" (click)="searchMovies()" *ngIf="!searching" >Go!</button>
-          <img src="../../../public/images/searching.gif"*ngIf="searching">
+          <img src="../../../public/images/searching.gif" *ngIf="searching">
 
         </span>
       </div>
+
+
+
+
+
       <!-- /input-group -->
+      </div>
+
+      <div class="col-md-10 col-md-offset-1" style="background-color: #FFFFFF" *ngIf="filteredList.length > 0" id="dropSearch" >
+        <ul *ngFor="let item of filteredList" >
+          <li >
+            <a (click)="select(item)">{{item}}</a>
+          </li>
+        </ul>
+      </div>
+
+
+
     </div>
+
+
+
   </form>
-</div>
-<div *ngIf="true">
+
+
+
+
+
+
+
+</div >
+<div *ngIf="true" style="z-index: 30">
   <h3 class="orange-text">Search Results</h3>
   <div class="row is-flex">
     <div class="col-md-offset-1" *ngFor="let movie of movies" >
