@@ -15,19 +15,19 @@
       </div>
 
 
-
+        <div class="col-md-10 col-md-offset-1" style="background-color: #FFFFFF" *ngIf="filteredList.length > 0" id="dropSearch" >
+          <ul *ngFor="let item of filteredList" >
+            <li >
+              <a (click)="select(item)">{{item}}</a>
+            </li>
+          </ul>
+        </div>
 
 
       <!-- /input-group -->
       </div>
 
-      <div class="col-md-10 col-md-offset-1" style="background-color: #FFFFFF" *ngIf="filteredList.length > 0" id="dropSearch" >
-        <ul *ngFor="let item of filteredList" >
-          <li >
-            <a (click)="select(item)">{{item}}</a>
-          </li>
-        </ul>
-      </div>
+
 
 
 
